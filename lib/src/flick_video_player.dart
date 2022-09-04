@@ -118,7 +118,7 @@ class _FlickVideoPlayerState extends State<FlickVideoPlayer> {
 
     _isFullscreen = true;
     _setPreferredOrientation();
-    _setSystemUIOverlays();
+    //_setSystemUIOverlays();
     if (kIsWeb) {
       document.documentElement?.requestFullscreen();
     }
@@ -151,7 +151,7 @@ class _FlickVideoPlayerState extends State<FlickVideoPlayer> {
     //_overlayEntry?.remove();
     //_overlayEntry = null;
     _setPreferredOrientation();
-    _setSystemUIOverlays();
+    //_setSystemUIOverlays();
   }
 
   _setPreferredOrientation() {
@@ -166,7 +166,7 @@ class _FlickVideoPlayerState extends State<FlickVideoPlayer> {
 
   _setSystemUIOverlays() {
     if (_isFullscreen) {
-      SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: widget.systemUIOverlayFullscreen);
+      SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: widget.systemUIOverlay);
     } else {
       SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: widget.systemUIOverlay);
     }
