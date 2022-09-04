@@ -83,7 +83,7 @@ class _FlickVideoPlayerState extends State<FlickVideoPlayer> {
     }
 
     if (kIsWeb) {
-      document.documentElement?.onFullscreenChange.listen(_webFullscreenListener);
+      //document.documentElement?.onFullscreenChange.listen(_webFullscreenListener);
       //document.documentElement?.onKeyDown.listen(_webKeyListener);
     }
 
