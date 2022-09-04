@@ -123,16 +123,16 @@ class _FlickVideoPlayerState extends State<FlickVideoPlayer> {
       document.documentElement?.requestFullscreen();
     }
 
-    _overlayEntry = OverlayEntry(builder: (context) {
-      return Scaffold(
-        body: FlickManagerBuilder(
-          flickManager: flickManager,
-          child: widget.flickVideoWithControlsFullscreen ?? widget.flickVideoWithControls,
-        ),
-      );
-    });
+    //_overlayEntry = OverlayEntry(builder: (context) {
+    //  return Scaffold(
+    //    body: FlickManagerBuilder(
+    //      flickManager: flickManager,
+    //      child: widget.flickVideoWithControlsFullscreen ?? widget.flickVideoWithControls,
+    //    ),
+    //  );
+    //});
 
-    Overlay.of(context)!.insert(_overlayEntry!);
+    //Overlay.of(context)!.insert(_overlayEntry!);
   }
 
   _exitFullscreen() {
@@ -148,8 +148,8 @@ class _FlickVideoPlayerState extends State<FlickVideoPlayer> {
       document.exitFullscreen();
     }
 
-    _overlayEntry?.remove();
-    _overlayEntry = null;
+    //_overlayEntry?.remove();
+    //_overlayEntry = null;
     _setPreferredOrientation();
     _setSystemUIOverlays();
   }
@@ -187,18 +187,9 @@ class _FlickVideoPlayerState extends State<FlickVideoPlayer> {
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () {
-        if (_overlayEntry != null) {
-          flickManager.flickControlManager!.exitFullscreen();
-          return Future.value(false);
-        }
-        return Future.value(true);
-      },
-      child: FlickManagerBuilder(
-        flickManager: flickManager,
-        child: widget.flickVideoWithControls,
-      ),
+    return FlickManagerBuilder(
+      flickManager: flickManager,
+      child: widget.flickVideoWithControls,
     );
   }
 }
