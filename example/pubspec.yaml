@@ -25,7 +25,11 @@ dependencies:
   visibility_detector: ^0.3.0
   flick_video_player:
     path: '../'
-  video_player: ^2.4.0
+  video_player: 
+    git:
+      url: https://github.com/lKinderBueno/video_player.git
+      path: video_player
+      ref: 63dd35fd3e18ecd1e11e1f9780772c7f83f0c4f3
   provider: ^6.0.1
 
   # The following adds the Cupertino Icons font to your application.
