@@ -16,7 +16,7 @@ dependencies:
     git:
       url: https://github.com/lKinderBueno/video_player.git
       path: video_player
-      ref: 63dd35fd3e18ecd1e11e1f9780772c7f83f0c4f3
+      ref: 27d8b973f033c3f8e41a39c364ec50876c158836
   provider: ^6.0.1
   wakelock: ^0.6.0
   universal_html: ^2.0.8
